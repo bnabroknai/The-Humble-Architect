@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+
+  --color-amber-500: #f59e0b;
+  --color-zinc-950: #09090b;
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+.glass-card {
+  @apply bg-zinc-900/50 border border-zinc-800 backdrop-blur-sm rounded-xl overflow-hidden;
+}
+
+.mystic-glow {
+  box-shadow: 0 0 40px -10px rgba(245, 158, 11, 0.15);
+}
+
+.markdown-body {
+  @apply prose prose-invert max-w-none;
+  @apply prose-headings:font-display prose-headings:text-zinc-100;
+  @apply prose-p:text-zinc-400 prose-p:leading-relaxed;
+  @apply prose-strong:text-amber-400;
+}
